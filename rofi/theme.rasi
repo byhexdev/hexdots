@@ -1,0 +1,178 @@
+/**
+ * Custom earthy theme
+ **/
+
+* {
+    /* palette */
+    primary:      rgba ( 127, 79, 36, 100% );   /* #7f4f24 */
+    secondary:    rgba ( 182, 173, 144, 100% ); /* #b6ad90 */
+    shadow:       rgba ( 88, 47, 14, 100% );    /* #582f0e */
+
+    foreground:   rgba ( 32, 24, 18, 100% );
+    background:   rgba ( 182, 173, 144, 96% );
+
+    background-alt: rgba ( 170, 160, 130, 100% );
+
+    selected:     var(primary);
+    active:       var(shadow);
+    urgent:       rgba ( 180, 70, 50, 100% );
+
+    border-color: var(primary);
+    separatorcolor: var(shadow);
+
+    spacing: 2;
+}
+
+/* --- WINDOW --- */
+
+window {
+    background-color: var(background);
+    border: 2px;
+    border-color: var(border-color);
+
+    border-radius: 10px;
+
+    padding: 10px;
+    
+    width: 450px;
+}
+
+/* --- MAIN --- */
+
+mainbox {
+    border: 0;
+    padding: 0;
+}
+
+/* --- INPUT BAR --- */
+
+inputbar {
+    background-color: var(background-alt);
+
+    border: 0px;
+    border-radius: 8px;
+
+    padding: 10px;
+    spacing: 8px;
+
+    text-color: var(foreground);
+
+    children: [
+        "prompt",
+        "entry"
+    ];
+}
+
+prompt {
+    text-color: var(primary);
+    font: "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    text-color: var(foreground);
+    placeholder: "Type to filter";
+    placeholder-color: rgba ( 60, 50, 40, 60% );
+}
+
+/* --- LISTVIEW --- */
+
+listview {
+    padding: 8px 0px 0px;
+    spacing: 6px;
+
+    scrollbar: true;
+    lines: 6;
+    border: 0;
+}
+
+/* --- ELEMENTS --- */
+
+element {
+    padding: 10px;
+    spacing: 10px;
+
+    border: 0;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: var(foreground);
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: var(foreground);
+}
+
+element selected.normal {
+    background-color: var(selected);
+    text-color: var(secondary);
+}
+
+element selected.active {
+    background-color: var(active);
+    text-color: var(secondary);
+}
+
+element selected.urgent {
+    background-color: var(urgent);
+    text-color: var(secondary);
+}
+
+/* --- TEXT / ICON --- */
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 1em;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+}
+
+/* --- MESSAGE --- */
+
+message {
+    border: 0;
+    padding: 6px;
+    margin: 6px 0 0 0;
+}
+
+/* --- SCROLLBAR --- */
+
+scrollbar {
+    width: 4px;
+    border: 0;
+    handle-width: 8px;
+    padding: 0;
+}
+
+scrollbar handle {
+    background-color: var(primary);
+    border-radius: 10px;
+}
+
+/* --- MODE SWITCHER --- */
+
+button {
+    padding: 8px;
+    border-radius: 8px;
+
+    background-color: transparent;
+    text-color: var(foreground);
+
+    cursor: pointer;
+}
+
+button selected {
+    background-color: var(primary);
+    text-color: var(secondary);
+}

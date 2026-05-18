@@ -1,0 +1,26 @@
+* {
+  font-family: GoMono Nerd Font, Roboto, Arial, sans-serif;
+  color: white;
+
+  padding: 0;
+  margin: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+#workspaces, #window, #clock, #language, #custom-notification {
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgb(88,47,14);
+  
+  border-radius: 8px;
+  border-bottom: 2px rgb(182,173,144) solid;
+}
+
+#custom-notification {
+  padding-right: 10px;
+}

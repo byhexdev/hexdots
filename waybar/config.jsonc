@@ -1,0 +1,56 @@
+{
+  "position": "top",
+  "height": 30,
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["hyprland/language", "custom/notification"],
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
+  "spacing": 2,
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "sort-by-number": true
+  },
+  "hyprland/window": {
+    "format": "{class}",
+    "separate-outputs": true
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ru": "RU"
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}

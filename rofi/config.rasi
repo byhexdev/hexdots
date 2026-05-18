@@ -1,0 +1,5 @@
+configuration {
+    font: "GoMono Nerd Font"; 
+}
+
+@import "theme"
