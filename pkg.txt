@@ -1,0 +1,7 @@
+rofi
+waybar
+nvim
+swaync
+hyprpaper
+hyprpicker
+flatpak
