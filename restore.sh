@@ -95,7 +95,10 @@ install_aur_packages
 echo ""
 
 echo "--- Linking Configs ---"
-link "$DOTDIR/hypr"                "$HOME/.config/hypr"
+mkdir -p "$HOME/.config/hypr"
+for f in "$DOTDIR"/hypr/*; do
+  link "$f" "$HOME/.config/hypr/$(basename "$f")"
+done
 link "$DOTDIR/kitty/kitty.conf"    "$HOME/.config/kitty/kitty.conf"
 link "$DOTDIR/nvim"                "$HOME/.config/nvim"
 link "$DOTDIR/rofi"                "$HOME/.config/rofi"
