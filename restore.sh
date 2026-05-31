@@ -106,6 +106,27 @@ link "$DOTDIR/swaync"              "$HOME/.config/swaync"
 link "$DOTDIR/waybar"              "$HOME/.config/waybar"
 
 echo ""
+echo "--- Visual Studio Code ---"
+read -rp "Install VS Code configs and extensions? [y/N] " ans
+case "${ans,,}" in
+  y|yes)
+    link "$DOTDIR/Code - OSS" "$HOME/.config/Code - OSS"
+    if command -v code &>/dev/null; then
+      ext_file="$DOTDIR/vs_code_ext.txt"
+      if [ -f "$ext_file" ]; then
+        echo "Installing VS Code extensions..."
+        xargs -L 1 code --install-extension < "$ext_file"
+      fi
+    else
+      echo "code command not found, skipping extensions"
+    fi
+    ;;
+  *)
+    echo "Skipping VS Code setup"
+    ;;
+esac
+
+echo ""
 echo "--- Proxy Setup ---"
 autostart="$HOME/.config/hypr/hyprland/autostart.conf"
 read -rp "Enable proxy (http://127.0.0.1:2080)? [Y/n] " ans

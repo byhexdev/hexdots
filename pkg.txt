@@ -5,3 +5,4 @@ swaync
 hyprpaper
 hyprpicker
 flatpak
+code
