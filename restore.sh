@@ -106,4 +106,18 @@ link "$DOTDIR/swaync"              "$HOME/.config/swaync"
 link "$DOTDIR/waybar"              "$HOME/.config/waybar"
 
 echo ""
+echo "--- Proxy Setup ---"
+autostart="$HOME/.config/hypr/hyprland/autostart.conf"
+read -rp "Enable proxy (http://127.0.0.1:2080)? [Y/n] " ans
+case "${ans,,}" in
+  n|no)
+    echo "Disabling proxy in $autostart"
+    sed -i '/^# PROXIES/,/^$/ s/^[^#]/#&/' "$autostart"
+    ;;
+  *)
+    echo "Proxy enabled"
+    ;;
+esac
+
+echo ""
 echo "=== Restore Complete ==="
